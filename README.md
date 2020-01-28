@@ -8,9 +8,12 @@ Further, the development team has left some poorly optimised code in the project
 You have two hours to complete the provided tasks, this time excludes time required for accessing the project repository.
 
 Tasks
+Implement score tracking system
 
-  Implement score tracking system
-  Implement a defeatable AI
-  Identify and correct poorly optimised code segments
-  Write five polish ideas
-  Implement one polish idea
+Implement a defeatable AI
+
+Identify and correct poorly optimised code segments
+
+Write five polish ideas
+
+Implement one polish idea
