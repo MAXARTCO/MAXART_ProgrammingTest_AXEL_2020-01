@@ -8,6 +8,7 @@ Further, the development team has left some poorly optimised code in the project
 You have two hours to complete the provided tasks, this time excludes time required for accessing the project repository.
 
 Tasks
+
 Implement score tracking system
 
 Implement a defeatable AI
