@@ -4,12 +4,35 @@ using UnityEngine;
 
 public class AIPaddleMovement : PaddleMovement
 {
-    // Update is called once per frame
+    // Mistake calculation range
+    [SerializeField] float findBallTimeMin, findBallTimeMax;
+    float findBallTimer;
+    [SerializeField] float ballPosMin, ballPosMax; // Randomness to the balls position
+
+    // Next location to get to
+    float nextPos;
+
+    private void Start()
+    {
+        findBallTimer = 0;
+    }
+
+
     void Update()
     {
-        Vector3 pos = transform.position;
-        pos.y = GameObject.FindGameObjectWithTag("Ball").transform.position.y;
-        SetNewPosition(pos.y);
-        transform.position = pos;
+        getBallPos();
+
+        MovePaddle(nextPos - transform.position.y);
     }
+
+    private void getBallPos()
+    {
+        if (findBallTimer < Time.time)
+        {
+            nextPos = GameObject.FindGameObjectWithTag("Ball").transform.position.y + Random.Range(ballPosMin, ballPosMax);
+            findBallTimer = Time.time + Random.Range(findBallTimeMin, findBallTimeMax);
+        }
+    }
+
+
 }
