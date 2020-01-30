@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class AIPaddleMovement : PaddleMovement
 {
-    // Mistake calculation range
+    // Losing track of ball position
     [SerializeField] float findBallTimeMin, findBallTimeMax;
     float findBallTimer;
-    [SerializeField] float ballPosMin, ballPosMax; // Randomness to the balls position
+
+    // Randomness to the balls position
+    [SerializeField] float ballPosMin, ballPosMax; 
 
     // Next location to get to
     float nextPos;

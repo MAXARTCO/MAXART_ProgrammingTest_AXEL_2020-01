@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour
     {
         // Calculate the ball direction reflected along the hit normal
         ContactPoint2D contactPoint = collision.GetContact(0);
-        Vector3 reflect = CalculateReflection(lastVel, contactPoint.normal);
+        Vector2 reflect = CalculateReflection(lastVel, contactPoint.normal);
 
         // Add velocity from the paddle's movement
         PaddleMovement pmove = collision.collider.GetComponent<PaddleMovement>();
@@ -39,7 +39,7 @@ public class Ball : MonoBehaviour
     /// <summary>
     /// Calculates the reflection of a vector
     /// </summary>
-    Vector3 CalculateReflection(Vector3 direction, Vector3 normal) => direction - 2 * (Vector3.Dot(normal, direction)) * normal; 
+    Vector2 CalculateReflection(Vector2 direction, Vector2 normal) => direction - 2 * (Vector2.Dot(normal, direction)) * normal; 
 
     public void Reset()
     {

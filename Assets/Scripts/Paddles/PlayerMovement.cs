@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : PaddleMovement
 {
 
+    [SerializeField] bool isPlayerOne;
+
     // Update is called once per frame
     void Update()
     {
@@ -17,9 +19,8 @@ public class PlayerMovement : PaddleMovement
     private void AnalyzeInput()
     {
         float move = 0;
-        if (Input.GetKey(KeyCode.W)) move += speed;
-        if (Input.GetKey(KeyCode.S)) move -= speed;
-
+        if ((Input.GetKey(KeyCode.W) && isPlayerOne) || (Input.GetKey(KeyCode.UpArrow) && !isPlayerOne)) move += speed;
+        if ((Input.GetKey(KeyCode.S) && isPlayerOne) || (Input.GetKey(KeyCode.DownArrow) && !isPlayerOne)) move -= speed;
         MovePaddle(move);
     }
 }
